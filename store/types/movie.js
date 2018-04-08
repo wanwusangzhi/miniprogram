@@ -1,0 +1,3 @@
+export const GET_HOT_MOVIE_LIST = 'GET_HOT_MOVIE_LIST'
+export const SET_MOVIE_LIST = 'SET_MOVIE_LIST'
+export const SET_MOVIE_ITEM = 'SET_MOVIE_ITEM'

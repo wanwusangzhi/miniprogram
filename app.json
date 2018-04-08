@@ -1,0 +1,55 @@
+{
+  "pages": [
+    "src/tabbar/route",
+    "src/tabbar/product",
+    "src/tabbar/mine"
+  ],
+  "subPackages": [
+    {
+      "root": "src/common",
+      "pages": []
+    },
+    {
+      "root": "src/product",
+      "pages": [
+        "item"
+      ]
+    },
+    {
+      "root": "src/mine",
+      "pages": []
+    }
+  ],
+  "window": {
+    "backgroundColor": "#FFFFFF",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "navigationBarTitleText": "小程序示例 ",
+    "enablePullDownRefresh": false,
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "default"
+  },
+  "tabBar": {
+    "selectedColor": "#FC9F06",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "src/tabbar/product",
+        "iconPath": "assets/product.png",
+        "selectedIconPath": "assets/product_active.png",
+        "text": "列表"
+      },
+      {
+        "pagePath": "src/tabbar/mine",
+        "iconPath": "assets/mine.png",
+        "selectedIconPath": "assets/mine_active.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 3000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}

@@ -1,0 +1,53 @@
+
+module.exports = {
+  /**
+   * 过滤日期,
+   * date: 传入时间戳或date对象 
+   * regexp: 显示格式, 如 'yyyy-MM-dd HH:mm'
+   */
+  formatDate: function (date, regexp = 'yyyy-MM-dd') {
+    if (typeof date !== 'object') {
+      date = getDate(+date)
+    }
+    function formatNumber(n) {
+      n = n.toString()
+      return n[1] ? n : '0' + n
+    }
+    var tmps = [
+      { key: 'y+', data: date.getFullYear() },
+      { key: 'M+', data: formatNumber(date.getMonth() + 1) },
+      { key: 'd+', data: formatNumber(date.getDate()) },
+      { key: 'H+', data: formatNumber(date.getHours()) },
+      { key: 'm+', data: formatNumber(date.getMinutes()) },
+      { key: 's+', data: formatNumber(date.getSeconds()) }
+    ]
+
+    tmps.map(function (i) {
+      regexp = regexp.replace(getRegExp(i.key, 'g'), i.data)
+    })
+    return regexp
+  },
+  /**
+   * 两位小数点
+   */
+  toFixed_2: function (value) {
+    return value.toFixed(2)
+  },
+  /**
+   * 输入整数, 
+   * 返回 nn,nnn,nnn.00
+   */
+  formatMoney: function (val, precision = 2) {
+    if (!val) {
+      return Math.pow(0.1, precision + 1).toFixed(precision)
+    }
+    function formatData(val) {
+      var tmp = val.toString().split('.')
+      tmp[0] = tmp[0].replace(getRegExp('\B(?=(?:\d{3})+(?!\d))', 'g'), ',')
+      return tmp[1] ? (tmp[0] + '.' + tmp[1].toString()) : tmp[0]
+    }
+    return formatData(val.toFixed(precision))
+  },
+
+};
+
