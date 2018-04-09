@@ -1,0 +1,2 @@
+/* src/tabbar/movie.wxss */
+@import '../components/Loader/load-more.wxss';

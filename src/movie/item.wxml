@@ -1,0 +1,52 @@
+<import src="../components/Loader/load-more.wxml" />
+
+<view class="page">
+  <view class="page__hd">
+    <view class="page__title">{{city.n}}</view>
+    <view class="page__desc">热映电影信息</view>
+    <view class="weui-panel__hd">热门电影 {{movieStore.totalHotMovie}}</view>
+    <view class="weui-panel__hd">即将上映 {{movieStore.totalComingMovie}}</view>
+    <view class="weui-panel__hd">同城影院 {{movieStore.totalCinemaCount}}</view>
+  </view>
+  <view class="page__bd">
+    <!-- <view class="weui-panel">
+      <view class="weui-panel__hd">文字列表附来源</view>
+      <view class="weui-panel__bd">
+        <view class="weui-media-box weui-media-box_text">
+
+          <view class="weui-media-box__title weui-media-box__title_in-text">标题一</view>
+          <view class="weui-media-box__desc">由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。</view>
+          <view class="weui-media-box__info">
+            <view class="weui-media-box__info__meta">文字来源</view>
+            <view class="weui-media-box__info__meta">时间</view>
+            <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">其它信息</view>
+          </view>
+        </view>
+      </view>
+    </view> -->
+
+    <block wx:for="{{movieStore.movies}}">
+      <view class="weui-panel weui-panel_access">
+        <view class="weui-panel__hd">{{item.titleCn}} ({{item.titleEn}}) </view>
+        <view class="weui-panel__bd">
+          <view data-id="{{item.movieId}}" data-index="{{index}}"  bindtap="getMovieDetail" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+            <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+              <image class="weui-media-box__thumb" src="{{item.img}}" />
+            </view>
+            <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+              <view class="weui-media-box__title">主演: {{item.actorName1}}  {{item.actorName2}}</view>
+              <view class="weui-media-box__desc ">{{item.commonSpecial}}</view>
+              <view class="weui-media-box__info">
+                <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">{{item.type}} </view>
+                <view class="weui-media-box__info__meta">{{item.is3D ? '3D' : ''}}</view>
+                <view class="weui-media-box__info__meta">{{item.isHot ? '热门': ''}}</view>
+                <view class="weui-media-box__info__meta">{{item.rYear}}-{{item.rMonth}}-{{item.rDay}}</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+    <template is='load-more' data="{{loading, end_text}}" />
+  </view>
+</view>

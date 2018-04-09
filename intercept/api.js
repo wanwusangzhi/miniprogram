@@ -3,8 +3,12 @@ import { _obj2url } from '../utils/util.js'
 const IMAGE = {
   alarm: '/assets/alarm.png'
 }
+const FLAG = {
+  isTipsUpgrade: false
+}
 
 const filter = (obj, cb) => {
+  obj = obj.url || obj
   if (!obj.isNeedLogin || getApp().state.session.account && getApp().state.session.token) {
     cb && cb()
   } else {
@@ -15,7 +19,7 @@ const filter = (obj, cb) => {
       success: function (res) {
         if (res.confirm) {
           // getApp().cb = cb
-          getApp().listen('api_login_success', cb)
+          // getApp().listen('api_login_success', cb)
           wx.navigateTo({
             url: '/src/common/login/index',
           })
@@ -23,6 +27,19 @@ const filter = (obj, cb) => {
       }
     })
   }
+}
+/**
+ * 返回url
+ */
+const getUrl = (tmp, data) => {
+  tmp = Object.assign({}, tmp)
+  if (tmp.url) {
+    tmp.value = tmp.url.value
+  }
+  if (data) {
+    tmp.value += "?" + _obj2url(data)
+  }
+  return tmp
 }
 /**
  * 微信原生API封装
@@ -78,13 +95,7 @@ export default {
    */
   navigateTo: function (obj, data) {
     filter(obj, () => {
-      let tmp = Object.assign({}, obj)
-      if (tmp.url) {
-        tmp.value = tmp.url.value
-      }
-      if (data) {
-        tmp.value = tmp.value + "?" + _obj2url(data)
-      }
+      let tmp = getUrl(obj, data)
       wx.navigateTo({
         url: tmp.value
       })
@@ -92,13 +103,7 @@ export default {
   },
   redirectTo: function (obj, data) {
     filter(obj, () => {
-      let tmp = Object.assign({}, obj)
-      if (tmp.url) {
-        tmp.value = tmp.url.value
-      }
-      if (data) {
-        tmp.value = tmp.value + "?" + _obj2url(data)
-      }
+      let tmp = getUrl(obj, data)
       wx.redirectTo({
         url: tmp.value
       })
@@ -106,13 +111,7 @@ export default {
   },
   switchTab: function (obj, data) {
     filter(obj, () => {
-      let tmp = Object.assign({}, obj)
-      if (tmp.url) {
-        tmp.value = tmp.url.value
-      }
-      if (data) {
-        tmp.value = tmp.value + "?" + _obj2url(data)
-      }
+      let tmp = getUrl(obj, data)
       wx.switchTab({
         url: tmp.value
       })
@@ -120,13 +119,7 @@ export default {
   },
   reLaunch: function (obj, data) {
     filter(obj, () => {
-      let tmp = Object.assign({}, obj)
-      if (tmp.url) {
-        tmp.value = tmp.url.value
-      }
-      if (data) {
-        tmp.value = tmp.value + "?" + _obj2url(data)
-      }
+      let tmp = getUrl(obj, data)
       wx.reLaunch({
         url: tmp.value
       })
@@ -194,11 +187,15 @@ export default {
     if (wx[key]) {
       wx[key](params)
     } else {
+      if (FLAG.isTipsUpgrade) {
+        return;
+      }
       wx.showModal({
         title: '提示',
         content: '当前微信版本过低，无法使用最新功能，请升级到最新微信版本后重试。',
         showCancel: false,
       })
+      FLAG.isTipsUpgrade = true
     }
   },
   /**

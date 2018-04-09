@@ -1,0 +1,4 @@
+/* src/mine/modify.wxss */
+.page{
+  height:100%;
+}

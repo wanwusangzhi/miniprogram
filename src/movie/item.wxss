@@ -1,0 +1,2 @@
+/* src/movie/item.wxss */
+@import '../components/Loader/load-more.wxss';

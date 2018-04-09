@@ -1,0 +1,24 @@
+<view class="page">
+  <view class="page__hd">
+    <view class="page__title">{{session.wxInfo.userInfo.nickName}}
+      <view class="weui-media-box__hd weui-media-box__hd_in-appmsg" style="float:right;">
+        <image class="weui-media-box__thumb" src="{{session.wxInfo.userInfo.avatarUrl}}" />
+      </view>
+    </view>
+    <view class="page__desc">个人签名:...</view>
+  </view>
+
+  <view class="weui-cells weui-cells_after-title">
+    <navigator url="/src/mine/modify" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      <view class="weui-cell__bd">名称</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access">{{session.wxInfo.userInfo.nickName}}</view>
+    </navigator>
+
+    <navigator url="/src/mine/modify" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      <view class="weui-cell__bd">区域</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access">
+        {{session.wxInfo.userInfo.country}}{{session.wxInfo.userInfo.province}}{{session.wxInfo.userInfo.city}}
+      </view>
+    </navigator>
+  </view>
+</view>

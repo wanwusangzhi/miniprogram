@@ -1,0 +1,21 @@
+<import src="../components/Loader/load-more.wxml" />
+<view class="page">
+  <view class="page__hd">
+    <view class="page__title">电影</view>
+    <view class="page__desc">选择城市</view>
+  </view>
+
+  <view class="weui-panel">
+    <view class="weui-panel__bd">
+      <view class="weui-cells weui-cells_in-small-appmsg" wx:for="{{locationList}}">
+        <navigator url="/src/movie/item?id={{item.id}}&index={{index}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+          <view class="weui-cell__bd weui-cell_primary">
+            <view>{{item.n}}</view>
+          </view>
+          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+  <template is='load-more' data="{{loading, end_text}}" />
+</view>

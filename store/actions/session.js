@@ -1,6 +1,7 @@
 import config from '../../config/config';
 import {
   WX_INFO,
+  SET_WX_INFO
 } from '../types/index';
 
 const URL = {
@@ -35,7 +36,21 @@ const actions = {
       })
     })
   },
-  
+  modifyName(params){
+    //TODO here you can do post or get to modify your infomation and return success or fail
+    //but i do not post a request, just to resolve success 
+    return new Promise(( resolve, reject) => {
+      // getApp().request({
+      //   url: URL.MODIFY_URL,
+      //   data: params
+      // }).then(res => {
+        getApp().commit(SET_WX_INFO, params)
+        resolve(params)
+      // }, err=> {
+      //   reject(err)
+      // })
+    })
+  }
 };
 
 /**

@@ -1,0 +1,27 @@
+/* 底部底线 */
+.kp-loadmore{
+  height: 80rpx;
+  width:100%;
+  background: #efeff4;
+}
+.kp-loadmore__loading{
+  width:80%;
+  margin:0 auto ;
+  text-align: center;
+  line-height: 80rpx;
+}
+.kp-loadmore__tips_in-line {
+  width:80%;
+  margin:0 auto ;
+  text-align: center;
+  line-height: 80rpx;
+  height:40rpx;
+  border-bottom:1rpx solid rgba(0, 0, 0, 0.1);
+}
+.kp-loadmore__tips_text{
+  background: #efeff4;
+  color:rgba(0, 0, 0, 0.2);
+  padding:20rpx;
+  font-size: 24rpx;
+}
+/* 底部底线 */

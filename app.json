@@ -1,8 +1,9 @@
 {
   "pages": [
     "src/tabbar/route",
-    "src/tabbar/product",
-    "src/tabbar/mine"
+    "src/tabbar/mine",
+    "src/tabbar/movie",
+    "src/tabbar/news"
   ],
   "subPackages": [
     {
@@ -10,14 +11,22 @@
       "pages": []
     },
     {
-      "root": "src/product",
+      "root": "src/movie",
+      "pages": [
+        "item", "detail"
+      ]
+    },
+    {
+      "root": "src/news",
       "pages": [
         "item"
       ]
     },
     {
       "root": "src/mine",
-      "pages": []
+      "pages": [
+        "modify"
+      ]
     }
   ],
   "window": {
@@ -34,7 +43,13 @@
     "borderStyle": "white",
     "list": [
       {
-        "pagePath": "src/tabbar/product",
+        "pagePath": "src/tabbar/movie",
+        "iconPath": "assets/product.png",
+        "selectedIconPath": "assets/product_active.png",
+        "text": "电影"
+      },
+      {
+        "pagePath": "src/tabbar/news",
         "iconPath": "assets/product.png",
         "selectedIconPath": "assets/product_active.png",
         "text": "列表"

@@ -8,11 +8,24 @@ export default {
     isNeedLogin: false
   },
   INDEX_PATH: {
-    value: '/src/tabbar/product',
+    value: '/src/tabbar/movie',
     isNeedLogin: false
   },
-  PRODUCT_ITEM: {
-    value: '/src/product/item',
+  NEWS_PATH: {
+    value: '/src/tabbar/news',
     isNeedLogin: false
   },
+  NEWS_ITEM: {
+    value: '/src/news/item',
+    isNeedLogin: false
+  },
+  MOVIE_LIST: {
+    value: '/src/movie/item',
+    isNeedLogin: false
+  },
+  MOVIE_DETAIL: {
+    value: '/src/movie/detail',
+    isNeedLogin: false
+  },
+  
 }
