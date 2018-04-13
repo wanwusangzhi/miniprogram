@@ -1,9 +1,4 @@
 import config from '../../config/config';
-import {
-  WX_INFO,
-  SET_WX_INFO
-} from '../types/index';
-
 const URL = {
   // 微信绑定
   WX_CONNECT: '/gw/accountlogic/connect_wechat',
@@ -25,7 +20,7 @@ const actions = {
             withCredentials: true,
             success: function (res) {
               res.code = response.code
-              getApp().commit(WX_INFO, res);//存储数据在state中
+              getApp().commit('session_wx', res);//存储数据在state中
               resolve(res)
             },
             fail: function (err) {
@@ -44,7 +39,7 @@ const actions = {
       //   url: URL.MODIFY_URL,
       //   data: params
       // }).then(res => {
-        getApp().commit(SET_WX_INFO, params)
+      getApp().commit('session_wx_user_info', params)
         resolve(params)
       // }, err=> {
       //   reject(err)

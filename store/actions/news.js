@@ -1,10 +1,4 @@
-
 import config from '../../config/config';
-import {
-  SET_NEWS_LIST,
-  SET_NEWS_ITEM
-} from '../types/index';
-
 const URL = {
   GET_HOT_NEWS_LIST: 'https://news-at.zhihu.com/api/4/news/latest',
   GET_NEWS_ITEM: 'https://news-at.zhihu.com/api/4/news/',
@@ -17,7 +11,7 @@ const actions = {
         method: 'GET',
         url: URL.GET_HOT_NEWS_LIST
       }).then(res => {
-        getApp().commit(SET_NEWS_LIST, res)
+        getApp().commit('news_list', res)
         resolve(res)
       }, err => {
         reject(err)
@@ -30,7 +24,7 @@ const actions = {
         method: 'GET',
         url: URL.GET_NEWS_ITEM + params.id
       }).then(res => {
-        getApp().commit(SET_NEWS_ITEM, res)
+        getApp().commit('news_detail', res)
         resolve(res)
       }, err => {
         reject(err)

@@ -1,9 +1,4 @@
 import config from '../../config/config';
-import {
-  SET_LOCATION_LIST,
-  SET_MOVIE_LIST,
-  SET_MOVIE_DETAIL
-} from '../types/index';
 
 const URL = {
   GET_LOCATION_LIST: 'https://api-m.mtime.cn/Showtime/HotCitiesByCinema.api',
@@ -18,7 +13,7 @@ const actions = {
         method: 'GET',
         url: URL.GET_LOCATION_LIST
       }).then(res => {
-        getApp().commit(SET_LOCATION_LIST, res)
+        getApp().commit('movie_location_list', res)
         resolve(res)
       }, err => {
         reject(err)
@@ -34,7 +29,7 @@ const actions = {
           locationId: params.id
         }
       }).then(res => {
-        getApp().commit(SET_MOVIE_LIST, res)
+        getApp().commit('movie_list', res)
         resolve(res)
       }, err => {
         reject(err)
@@ -48,7 +43,7 @@ const actions = {
         url: URL.GET_MOVIE_DETAIL,
         params
       }).then(res => {
-        getApp().commit(SET_MOVIE_DETAIL, res)
+        getApp().commit('movie_detail', res)
         resolve(res)
       }, err => {
         reject(err)
