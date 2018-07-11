@@ -10,7 +10,7 @@ const actions = {
   /**
    * 微信统一登录, unionId绑定
    */
-  getWXCode: function () {
+  getWXCode: function() {
     return new Promise((resolve, reject) => {
       //微信授权,获取unionId
       getApp().kpApi.login({
@@ -18,12 +18,12 @@ const actions = {
           //获取用户信息
           getApp().kpApi.kpAuth('getUserInfo', {
             withCredentials: true,
-            success: function (res) {
+            success: function(res) {
               res.code = response.code
-              getApp().commit('session_wx', res);//存储数据在state中
+              getApp().commit('session_wx', res); //存储数据在state中
               resolve(res)
             },
-            fail: function (err) {
+            fail: function(err) {
               reject(err)
             }
           }, true)
@@ -31,19 +31,12 @@ const actions = {
       })
     })
   },
-  modifyName(params){
+  modifyName(params) {
     //TODO here you can do post or get to modify your infomation and return success or fail
     //but i do not post a request, just to resolve success 
-    return new Promise(( resolve, reject) => {
-      // getApp().request({
-      //   url: URL.MODIFY_URL,
-      //   data: params
-      // }).then(res => {
+    return new Promise((resolve, reject) => {
       getApp().commit('session_wx_user_info', params)
-        resolve(params)
-      // }, err=> {
-      //   reject(err)
-      // })
+      resolve(params)
     })
   }
 };
@@ -54,7 +47,7 @@ const actions = {
  */
 function setCookie(response) {
   let cookie = getApp().kpApi.getStorageSync('cookie') || {};
-  
+
   wx.setStorageSync('cookie', cookie);
 }
 

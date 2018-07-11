@@ -17,11 +17,11 @@ Page({
     //获得code
     getApp().dispatch('getWXCode').then(res => {
       console.log('------授权成功', res)
-      getApp().kpApi.reLaunch(config.INDEX_PATH)
+      getApp().kpApi.reLaunch('INDEX_PATH')
       //免登开始
     }, err => {
       //授权失败,跳转拦截页面
-      getApp().kpApi.reLaunch(config.INTERCEPT_INDEX)
+      getApp().kpApi.reLaunch('INTERCEPT_INDEX')
     })
   },
   

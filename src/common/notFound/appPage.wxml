@@ -1,0 +1,8 @@
+<!--src/common/notFound/appPage.wxml-->
+<view class="page">
+  <view class="page_comp">
+    <image src='/assets/no_page.png' class="image_no_page"></image>
+    <view class="page_comp_text">页面跑丢了</view>
+    <view class="page_comp_text_2">请稍后重试</view>
+  </view>
+</view>

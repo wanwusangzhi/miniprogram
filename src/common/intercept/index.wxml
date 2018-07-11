@@ -1,0 +1,16 @@
+<import src="../../templates/corporation-info.wxml" />
+<view class="page">
+  <!-- 店面图片跟名字 -->
+  <template is="corporation-info" data="{{corporation}}" />
+
+  <!-- 文字 -->
+  <view class="weui-flex">
+    <view class="weui-flex__item " style="margin-bottom:90rpx;padding-top:80rpx;">
+      <view>为了正常使用小程序，需要您授权公开信息。</view>
+    </view>
+  </view>
+  <!-- 按钮 -->
+  <view class=" page__bd_spacing ">
+    <button open-type="{{openType}}" bindgetuserinfo="openSetting" bindopensetting="openSetting" class="weui-btn btn-biils">好的，去授权</button>
+  </view>
+</view>

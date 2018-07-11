@@ -1,0 +1,19 @@
+/* src/common/intercept/index.wxss */
+
+.page {
+  height: 100%;
+  background: #fff;
+  text-align: center;
+}
+
+/* 按钮 */
+.btn-biils::after{
+  border: none;
+}
+.btn-biils {
+  background-color: #ff9f00;
+  color: #fff;
+  font-size: 32rpx;
+  line-height: 45px;
+}
+/* 按钮 */

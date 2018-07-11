@@ -42,7 +42,7 @@ Page({
     getApp().dispatch('getMovieDetail', {
       locationId, movieId
     }).then(res=>{
-      getApp().kpApi.navigateTo(config.MOVIE_DETAIL)
+      getApp().kpApi.navigateTo('MOVIE_DETAIL')
     })
   }
 })

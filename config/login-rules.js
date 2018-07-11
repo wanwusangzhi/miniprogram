@@ -4,27 +4,37 @@
 export default {
   /** common模块 */
   ROUTE_PATH: {
-    value: '/src/tabbar/route',
+    url: '/src/tabbar/route',
     isNeedLogin: false
   },
   INDEX_PATH: {
-    value: '/src/tabbar/movie',
+    url: '/src/tabbar/movie',
     isNeedLogin: false
   },
+  INTERCEPT_INDEX: {
+    url: '/src/common/intercept/index',
+    isNeedLogin: false
+  },
+  PAGE_NOT_FOUND: {
+    url: '/src/common/notFound/appPage',
+    isNeedLogin: false
+  },
+
   NEWS_PATH: {
-    value: '/src/tabbar/news',
+    url: '/src/tabbar/news',
     isNeedLogin: false
   },
   NEWS_ITEM: {
-    value: '/src/news/item',
+    url: '/src/news/item',
     isNeedLogin: false
   },
+
   MOVIE_LIST: {
-    value: '/src/movie/item',
+    url: '/src/movie/item',
     isNeedLogin: false
   },
   MOVIE_DETAIL: {
-    value: '/src/movie/detail',
+    url: '/src/movie/detail',
     isNeedLogin: false
   },
   

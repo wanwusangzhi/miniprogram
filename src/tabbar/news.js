@@ -17,7 +17,7 @@ let page = {
     let _index = e.currentTarget.id
     let _item = newsStore.state.stories[_index]
     getApp().dispatch('getNewsItem', { id: _item.id }).then(res => {
-      getApp().kpApi.navigateTo(config.NEWS_ITEM);
+      getApp().kpApi.navigateTo('NEWS_ITEM');
     })
   }
 }

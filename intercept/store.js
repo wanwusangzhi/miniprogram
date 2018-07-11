@@ -1,13 +1,16 @@
 import { _split2arr } from '../utils/util.js'
-class Store {
-  constructor({ name, inst }) {
+const Store = function ({ name, inst }) {
+  return new Store.fn.init({ name, inst })
+}
+Store.fn = Store.prototype = {
+  init: function ({ name, inst }) {
     this.inst = inst
     this.name = name
     this.state = getApp().state[name]
+    return this
   }
 }
-
-Store.prototype.getData = function (key, from) {
+Store.fn.init.prototype.getData = function (key, from) {
   let tmp = getApp().state[this.name][from] || getApp().state[this.name]
   let sp = _split2arr(key)
   let last = sp.pop()
@@ -23,7 +26,7 @@ Store.prototype.getData = function (key, from) {
   return retVal
 }
 
-Store.prototype.setData = function (data) {
+Store.fn.init.prototype.setData = function (data) {
   let keys = Object.keys(data)
   keys.forEach(item => {
     try {

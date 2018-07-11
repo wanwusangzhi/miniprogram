@@ -27,14 +27,5 @@ export default {
     time_out: '请求超时',
     server_out: '网络异常',
   },
-  model: {
-    corporation: '企业',
-    customer: '客户'
-  },
-  customer: {
-  },
-  product: {
-  },
-  
 }
 

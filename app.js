@@ -9,14 +9,13 @@ let app = {
   onLaunch: function (options) {
   },
   request,
+  event: new Event,
   kpApi,
-  ...Event,
   ...kpStore,
   /**
    * 初始化数据
    */
   init() {
-    //TODO when init
   },
 }
 

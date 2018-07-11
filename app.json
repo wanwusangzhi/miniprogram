@@ -7,8 +7,11 @@
   ],
   "subPackages": [
     {
-      "root": "src/common",
-      "pages": []
+      "root": "src/common/",
+      "pages": [
+        "intercept/index",
+        "notFound/appPage"
+      ]
     },
     {
       "root": "src/movie",

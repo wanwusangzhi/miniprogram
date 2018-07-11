@@ -1,0 +1,41 @@
+/* src/common/notFound/appPage.wxss */
+
+.page {
+  height: 100%;
+  width: 100%;
+  background: #fff;
+  position: relative;
+  text-align: center;
+  letter-spacing: 2rpx;
+}
+
+/* 外层定位 */
+
+.page_comp {
+  position: absolute;
+  width: 340rpx;
+  top: 25%;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+/* 图片 */
+
+.image_no_page {
+  width: 340rpx;
+  height: 224rpx;
+  padding-right: 20rpx;
+}
+
+/* 文字 */
+
+.page_comp_text {
+  color: #c0c0c0;
+  font-size: 32rpx;
+}
+.page_comp_text_2{
+  color: #c0c0c0;
+  font-size: 22rpx;
+
+}
