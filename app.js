@@ -3,6 +3,7 @@ import config from './config/config.js'
 import * as kpStore from './store/index'
 import kpApi from './intercept/api.js'
 import Event from './intercept/events.js'
+import Share from './intercept/share.js'
 import { _combine } from './utils/util.js'
 
 let app = {
@@ -12,10 +13,12 @@ let app = {
   event: new Event,
   kpApi,
   ...kpStore,
+  ...Share,
   /**
    * 初始化数据
    */
   init() {
+    
   },
 }
 

@@ -30,8 +30,15 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
-			"list": []
+			"current": -1,
+			"list": [
+				{
+					"id": 0,
+					"name": "23",
+					"pathName": "src/tabbar/route",
+					"query": "appShare=true&actionName=shareOrderDetail&arg1=id1&arg2=id2"
+				}
+			]
 		}
 	}
 }

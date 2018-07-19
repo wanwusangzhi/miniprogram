@@ -17,8 +17,6 @@ export default {
       delete _opt.complete
 
       /**
-       * id: Encrypted id of corporation
-       * staff_id: Encrypted id of staff
        * path: target path, this level is higher than actionName
        * pathParams: the prams of path
        * actionName: method name for processing
@@ -32,13 +30,7 @@ export default {
 
     if (!_retVal.title) {
       //set title
-      try {
-        _retVal.title = (this.state.session.corporation.corp_name
-          ? this.state.session.corporation.corp_name
-          : config.APP_NAME)
-      } catch (e) {
-        _retVal.title = config.APP_NAME
-      }
+      _retVal.title = config.APP_NAME
     }
 
     // combine params

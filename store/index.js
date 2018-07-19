@@ -80,8 +80,6 @@ export function createStore() {
 export function sharesDeal(options) {
 
   options = JSON.parse(JSON.stringify(options))
-  delete options.id
-  delete options.staff_id
   delete options.appShare
 
   let _name = options.actionName
