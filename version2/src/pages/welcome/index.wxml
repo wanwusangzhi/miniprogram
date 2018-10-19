@@ -1,0 +1,3 @@
+<!--src/pages/welcome/index.wxml-->
+<text>src/pages/welcome/index.wxml</text>
+<view>{{ userInfo.name }}</view>

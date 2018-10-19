@@ -1,0 +1,26 @@
+{
+  "pages": [
+    "src/route/index"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "Yoyi",
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle": "light"
+  },
+  "subpackages": [
+    {
+      "root": "src/pages/welcome",
+      "pages": [
+        "index"
+      ]
+    }
+  ],
+  "networkTimeout": {
+    "request": 30000,
+    "downloadFile": 10000
+  },
+  "functionalPages": true,
+  "debug": true
+}
