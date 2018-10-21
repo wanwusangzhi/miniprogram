@@ -2,6 +2,9 @@ import {
   _obj2url
 } from '../utils/util.js'
 import config from '../config/index.js'
+const Router = config.Router
+const Lang = config.Lang
+
 /**
  * @param {object} obj
  * @param {string} obj.url
@@ -10,23 +13,28 @@ import config from '../config/index.js'
  * @param {function} cb callback
  */
 function filter(key, data, cb) {
-  if (!config[key]) {
+  if (!Router[key]) {
     console.warn('找不到路径', key)
     return
   }
-
-  let obj = Object.assign({}, config[key])
+  /**
+   * 增加登录判断
+   */
+  let obj = Object.assign({}, Router[key])
   // 不需要登陆或已存在登陆态 则可以调用 cb 进行相关跳转
   if (!obj.isNeedLogin) {
     cb && cb()
   } else {
-    getApp().kpApi.showModal({
-      title: config.login.title,
-      content: config.login.toast_tips,
+    let success = data.success || (err => {
+      if (err.errMsg) wx.reLaunch(Object.assign({}, Router.pageNotFound))
+    })
+    delete data.success
+    delete data.fail
+    getApp().$api.showModal({
+      title: Lang.dialog.title,
+      content: Lang.dialog.content,
       showCancel: true,
-      success: function (res) {
-        getApp().kpApi.navigateTo(key, data)
-      }
+      success
     })
   }
 }
@@ -40,12 +48,18 @@ function filter(key, data, cb) {
  * @returns {object} { url, success, fail, complete }
  */
 function getUrlObj(key, data) {
-  let obj = Object.assign({}, config[key])
+  let obj = Object.assign({}, Router[key])
+  let success = data.success || (() => {})
+  let fail = data.fail || (err => {
+    if (err.errMsg) wx.reLaunch(Object.assign({}, Router.pageNotFound))
+  })
+  delete data.success
+  delete data.fail
+
   return {
     url: data ? `${obj.url}?${_obj2url(data)}` : obj.url,
-    fail: err => {
-      if (err.errMsg) wx.reLaunch(Object.assign({}, config.PAGE_NOT_FOUND))
-    }
+    success,
+    fail 
   }
 }
 
@@ -71,7 +85,7 @@ export default {
   navigateBack: () => {
     // 处理返回时, 没有页面则直接跳转到首页
     if (getCurrentPages().length == 1) {
-      wx.switchTab(Object.assign({}, config.INDEX_PATH)) //wx进行跳转时, 对config要进行复制
+      wx.switchTab(Object.assign({}, Router.routeIndex)) //wx进行跳转时, 对config要进行复制
     } else {
       wx.navigateBack()
     }
@@ -186,7 +200,7 @@ export default {
     if (wx[key]) {
       wx[key](params)
     } else {
-      getApp().kpApi.showModal({
+      getApp().$api.showModal({
         content: '当前微信版本过低，无法使用最新功能，请升级到最新微信版本后重试。'
       })
     }

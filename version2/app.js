@@ -1,13 +1,20 @@
 //app.js
 import $store from './store/index.js'
-import adapter from './adapter/index.js'
+import publicApi from './public/index.js'
+import config from './config/index.js'
 let app = {
-  onLaunch: function() {},
+  onLaunch(options) {
+    console.warn('options', options)
+  },
   onShow() {
-    console.warn('api',this)
+
+    wx.navigateTo({
+      url: '/src/pages/welcome/index',
+    })
+    // console.warn('api',this)
   },
   $store,
-  ...adapter
+  ...publicApi
 }
 
 App(app)

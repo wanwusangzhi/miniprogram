@@ -114,15 +114,17 @@ export const _url2obj = (url) => {
  * 拼接url参数
  * @return key=value&key1=value1
  */
-export const _obj2url = (params) => {
-  let tmpUrl = '';
-  if (params) {
-    tmpUrl = []
+export const _obj2url = (params = {}) => {
+  if (Object.keys(params).length) {
+    let tmpUrl = [];
     for (let item in params) {
       tmpUrl = [tmpUrl.concat([[encodeURIComponent(item), encodeURIComponent(params[item])].join('=')]).join("&")]
     }
+    console.warn('tmpUrl', tmpUrl)
+    return tmpUrl
+  } else {
+    return null
   }
-  return tmpUrl
 }
 
 //定义空函数

@@ -1,4 +1,9 @@
-import route from './route'
+import Router from './router'
+import ZH from './zh'
+
+/**
+ * 环境/域名等配置
+ */
 const defaultConfig = {
   isProduction() {
     return true
@@ -14,6 +19,18 @@ const defaultConfig = {
   },
 }
 
-const exportConfig = Object.assign({}, defaultConfig, route)
+/**
+ * 国际化
+ */
+const getCurLang = () => {
+  return ZH
+}
+/**
+ * 导出
+ */
+const exportConfig = Object.assign({}, defaultConfig, {
+  Router,
+  Lang: getCurLang()
+})
 
 export default exportConfig
