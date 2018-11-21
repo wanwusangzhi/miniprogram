@@ -1,0 +1,7 @@
+<!--src/pages/welcome/index2.wxml-->
+<text>src/pages/welcome/index2.wxml</text>
+
+<view>currentLength: {{num}}</view>
+<view>{{arrList}}</view>
+<button bindtap='add'>pop</button>
+<button bindtap='remove'>shift</button>

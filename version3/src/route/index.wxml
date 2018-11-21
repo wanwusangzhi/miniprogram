@@ -1,0 +1,5 @@
+<!--src/route/index.wxml-->
+<text>src/route/index.wxml</text>
+<view>{{ab}}-- {{a}}</view>
+
+<button bindtap='add'>click</button> 

@@ -1,0 +1,4 @@
+<!--src/pages/welcome/index.wxml-->
+<text>src/pages/welcome/index.wxml</text>
+<view>{{ userInfo.name }} {{ user}}</view>
+<navigator open-type='navigate' url='/src/pages/welcome/index2'>goto 2</navigator>
