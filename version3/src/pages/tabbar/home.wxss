@@ -1,0 +1,40 @@
+/* src/pages/tabbar/home.wxss */
+/* lang */
+.lang {
+  position: absolute;
+  top: 30rpx;
+  left: 30rpx;
+  z-index: 1;
+  font-size: 32rpx;
+  text-align: center;
+  line-height: 80rpx;
+  width: 80rpx;
+  border-radius: 50%;
+  border: 1rpx solid #dbdbdb;
+}
+
+/* 功能区 */
+
+.modules {
+  height: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.modules_item {
+  max-width: 25%;
+  width: 25%;
+  height: 160rpx;
+  text-align: center;
+  line-height: 160rpx;
+}
+
+.modules_image {
+  width: 120rpx;
+  height: 120rpx;
+  border: 1px solid #fafafa;
+  border-radius: 50%;
+  vertical-align: middle;
+}

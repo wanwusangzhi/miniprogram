@@ -1,0 +1,34 @@
+<!--src/pages/tabbar/home3.wxml-->
+<view class="container">
+  <view class="header">
+    <view class="left_box">
+      <view class="userinfo">
+        <open-data class="avatar" type="userAvatarUrl"></open-data>
+        <view class="box_2">
+          <view><open-data class="nick_name" type="userNickName"></open-data>
+          </view>
+          <view>20000 {{ t.core }}</view>
+        </view>
+      </view>
+      <view class="mobile">{{t.mobile}}: 18938888888</view>
+    </view>
+
+    <!-- <view class="right_box">
+      <view class="right_box_image">
+        <image mode="scaleToFill" src="/assets/notice.png"></image>
+      </view>
+      <view class="right_box_image">
+        <image mode="scaleToFill" src="/assets/setting.png"></image>
+      </view>
+      <view class="day_click">
+        {{ t.dayClick }}
+        <image mode="scaleToFill" src="/assets/buxing.png"></image>
+      </view>
+    </view> -->
+  </view>
+  <view class="comp_box_bg"></view>
+  <view class="comp_box"><columnComp list-data="{{ columnList }}"></columnComp></view>
+
+  <view class="comp_box"><itemComp list-data="{{ itemList }}"></itemComp></view>
+
+</view>

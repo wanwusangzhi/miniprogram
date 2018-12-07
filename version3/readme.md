@@ -34,3 +34,9 @@ wx.ct = {
   $router,
   $config
 }
+
+### color
+#dbdbdb
+#fafafa
+#d81e06
+#0752dd

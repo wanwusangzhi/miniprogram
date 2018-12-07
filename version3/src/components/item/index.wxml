@@ -1,0 +1,6 @@
+<!--src/components/item/index.wxml-->
+<view class="item_box">
+  <view wx:for="{{ listData }}" wx:key="{{ index }}" id="{{index}}" class="item_box_item">
+    {{item}}
+  </view>
+</view>

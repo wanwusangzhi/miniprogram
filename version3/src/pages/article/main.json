@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "adComp": "/src/components/ad/index",
+    "commentComp": "/src/components/comment/index"
+  }
+}

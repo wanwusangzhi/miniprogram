@@ -1,22 +1,31 @@
 import Loader from './loader.js'
+import Config from './config/index.js'
 
 class Http {
+  static setUrl (options) {
+    if (options.url && options.url.indexOf('http') === -1) {
+      options.url = Config.httpUrl() + options.url
+    }
+  }
   static cookies  = {}
+
   static getHttpCookies () {
     return Object.keys(Http.cookies).reduce((a, b) => {
       return a + encodeURIComponent(b) + '=' + encodeURIComponent(Http.cookies[b]) + ';'
     }, '')
   }
+
   static getCookies() {
-    return getApp().$api.getStorageSync('cookies')
+    return wx.ct.$api.getStorageSync('cookies')
   }
+
   static setCookies(cookieDict = {}) {
-    const cookies = getApp().$api.getStorageSync('cookies') || {}
+    const cookies = wx.ct.$api.getStorageSync('cookies') || {}
     Object.keys(cookieDict).forEach(cookie => {
       cookies[cookie] = cookieDict[cookie]
     })
     Http.cookies = cookies
-    getApp().$api.setStorageSync('cookies', cookies)
+    wx.ct.$api.setStorageSync('cookies', cookies)
   }
 
   static getConfig() {
@@ -27,7 +36,7 @@ class Http {
       },
       dataType: 'json',
       method: 'POST',
-      responseType: 'json',
+      responseType: 'text',
     }
   }
 }
@@ -44,6 +53,8 @@ class Request {
       Loader.created(options.url)
     }
     delete options.loading
+
+    Http.setUrl(options)
     return options
   }
 

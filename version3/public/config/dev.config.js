@@ -1,6 +1,6 @@
 export default {
   ENV: 'dev',
   httpUrl() {
-    return 'https://www.moschat.com'
+    return 'https://api-m.mtime.cn'
   }
 }

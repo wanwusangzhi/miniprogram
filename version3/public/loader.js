@@ -4,7 +4,7 @@ class Loader {
   }
   showLoader() {
     if (Object.keys(this.loaderCache).length) {
-      getApp().$api.showLoading({
+      wx.ct.$api.showLoading({
         title: '', duration: 60000
       })
     }
@@ -12,7 +12,7 @@ class Loader {
   hideLoader() {
     console.warn('this.loaderCache', this.loaderCache)
     if (!Object.keys(this.loaderCache).length) {
-      getApp().$api.hideLoading()
+      wx.ct.$api.hideLoading()
     }
   }
   created (key) {

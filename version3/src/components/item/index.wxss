@@ -1,0 +1,35 @@
+/* src/components/item/index.wxss */
+@import '/app.wxss';
+
+.item_box_item {
+  height: 90rpx;
+  display: flex;
+  align-items: center;
+  padding: 0 20rpx;
+  border-bottom: 1rpx solid #fafafa;
+  position: relative;
+  font-size: 30rpx;
+}
+
+.item_box_item::after {
+  content: '';
+  position: absolute;
+  width: 30rpx;
+  height: 30rpx;
+  border-style: solid;
+  border-right-width: 3rpx;
+  border-bottom-width: 3rpx;
+  border-top: 0rpx;
+  border-left: 0rpx;
+  border-color: #d81e06;
+  top: 0;
+  bottom: 0;
+  right: 20rpx;
+  margin: auto;
+  transform: rotateZ(-45deg);
+}
+
+.item_box_item:hover {
+  filter: opacity(0.85);
+  box-shadow: inset 0 0 0 1rpx #fafafa;
+}

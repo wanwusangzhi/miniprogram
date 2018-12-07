@@ -1,10 +1,73 @@
 /**app.wxss**/
+
+view, text, swiper, scroll-view, image {
+  box-sizing: border-box;
+}
+
 .container {
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 200rpx 0;
+  width: 100%;
+  position: relative;
   box-sizing: border-box;
-} 
+  
+}
+.comp_box {
+  /* border: 1rpx solid #d81e06; */
+  border: 1rpx solid #f1f1f1;
+  margin: 30rpx;
+  /* padding: 0 20rpx; */
+  border-radius: 16rpx;
+  overflow: hidden;
+  box-shadow: 0 0 30rpx 10rpx #f1f1f1;
+}
+/* float */
+
+.float_left {
+  float: left;
+}
+
+.float_right {
+  float: right;
+}
+
+/* color */
+
+.color_1 {
+  color: #d81e06;
+}
+
+.color_2 {
+  color: #dbdbdb;
+}
+/* 两行省略 */
+.app_two_line {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+/* app box */
+.app_box{
+  position: relative;
+}
+/* .app_box:not(:last-child) {
+  margin-bottom: 20rpx;
+} */
+.app_box:not(:last-child)::after {
+  position: absolute;
+  display: block;
+  left: 0;
+  right: 0;
+  bottom: -19rpx;
+  content: '';
+  height: 20rpx;
+  width: 100%;
+  border-top: 1rpx solid #f1f1f1;
+  background: linear-gradient(185deg, #f1f1f1, #fcfcfc);
+  /* background: #f1f1f1; */
+}
+.app_box:hover{
+  filter: opacity(.8);
+}

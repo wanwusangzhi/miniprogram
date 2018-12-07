@@ -1,0 +1,63 @@
+/* src/components/content_1/index.wxss */
+@import '/app.wxss';
+/* 列表 */
+
+.content1_box {
+  width: 100%;
+  margin-bottom: 20rpx;
+  position: relative;
+}
+
+/* title */
+
+.title {
+  display: flex;
+  align-items: center;
+  font-size: 30rpx;
+  padding: 20rpx;
+}
+
+.title_header {
+  width: 60rpx;
+  margin-right: 20rpx;
+}
+
+.title_header_img {
+  border-radius: 50%;
+  width: 60rpx;
+  height: 60rpx;
+}
+
+/* pictrue or video */
+
+.main_wrapper {
+  height: 380rpx;
+  width: 100%;
+}
+
+.main_wrapper >image {
+  width: 100%;
+  height: 100%;
+}
+
+/* comment */
+
+.footer_wrapper {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-size: 30rpx;
+  padding: 20rpx;
+  width: 100%;
+}
+
+.footer_wrapper> label {
+  flex: 1;
+}
+
+.footer_wrapper_icon {
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: middle;
+  margin-right: 8rpx;
+}

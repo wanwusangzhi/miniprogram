@@ -1,0 +1,26 @@
+/* src/pages/article/main.wxss */
+.container {
+  padding: 30rpx;
+  padding-bottom: 0;
+}
+.header{
+  display: flex;
+  align-items: center;
+  padding: 10rpx 0;
+  border-bottom:1rpx solid #f1f1f1;
+}
+
+.header > image{
+  height: 120rpx;
+  width: 120rpx;
+  vertical-align: middle;
+}
+.header_info{
+  font-size: 36rpx;
+  padding-left: 30rpx;
+}
+.content{
+  width: 100%;
+  word-break: break-all;
+  padding: 20rpx 0;
+}

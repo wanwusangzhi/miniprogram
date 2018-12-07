@@ -1,13 +1,20 @@
 {
   "pages": [
-    "src/route/index"
+    "src/route/index",
+    "src/pages/tabbar/home",
+    "src/pages/tabbar/home2",
+    "src/pages/tabbar/home3"
   ],
   "window": {
-    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarBackgroundColor": "white",
     "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "Yoyi",
-    "backgroundColor": "#eeeeee",
-    "backgroundTextStyle": "light"
+    "navigationBarTitleText": "Circle",
+    "navigationStyle": "default",
+    "backgroundColor": "#fafafa",
+    "backgroundColorTop": "#fafafa",
+    "backgroundColorBottom": "#fafafa",
+    "backgroundTextStyle": "dark",
+    "enablePullDownRefresh": false
   },
   "subpackages": [
     {
@@ -16,11 +23,44 @@
         "index",
         "index2"
       ]
+    },
+    {
+      "root": "src/pages/article",
+      "pages":[
+        "main"
+      ]
     }
   ],
+  "tabBar": {
+    "color": "#dbdbdb",
+    "selectedColor": "#d81e06",
+    "borderStyle": "white",
+    "backgroundColor":"#fafafa",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "src/pages/tabbar/home",
+        "text": "首页",
+        "iconPath": "/assets/tab_1.png",
+        "selectedIconPath": "/assets/tab_1_active.png"
+      },
+      {
+        "pagePath": "src/pages/tabbar/home2",
+        "text": "浏览",
+        "iconPath": "/assets/tab_2.png",
+        "selectedIconPath": "/assets/tab_2_active.png"
+      },
+      {
+        "pagePath": "src/pages/tabbar/home3",
+        "text": "个人",
+        "iconPath": "/assets/tab_3.png",
+        "selectedIconPath": "/assets/tab_3_active.png"
+      }
+    ]
+  },
   "networkTimeout": {
-    "request": 30000,
-    "downloadFile": 10000
+    "request": 60000,
+    "downloadFile": 60000
   },
   "functionalPages": true,
   "debug": true

@@ -1,0 +1,35 @@
+/* src/components/content/index.wxss */
+@import '/app.wxss';
+
+.content_box {
+  position: relative;
+  display: flex;
+  padding: 20rpx;
+}
+.content_box:not(:last-child) {
+  margin-bottom: 20rpx;
+}
+
+/* left side */
+.content_box_left {
+  flex: 2;
+  height: 160rpx;
+  word-break: break-all;
+  position: relative;
+}
+.left_name_date {
+  font-size: 32rpx;
+  position:absolute;
+  bottom: 0;
+}
+
+/* right side */
+.content_box_right {
+  flex: 1;
+  padding-left: 20rpx;
+}
+
+.right_image {
+  width: 100%;
+  height: 100%;
+}

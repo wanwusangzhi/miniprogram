@@ -5,8 +5,8 @@ import {
 
 const defaultValue = () => {
   return {
-    title: 'Yoyi',
-    path: Router.routerIndex.url + '?share=true'
+    title: 'YouNi',
+    path: Router.routeindex.url + '?share=true'
   }
 }
 
@@ -14,13 +14,13 @@ class Share {
   constructor() {}
   /**
    * create share action
-   * getApp().$share({})
-   * getApp().$share({
-   *  path: 'routerIndex',
+   * wx.ct.$share({})
+   * wx.ct.$share({
+   *  path: 'routeindex',
    *  params1: '',
    *  params2: {}
    * })
-   * getApp().$share({
+   * wx.ct.$share({
    *  action: 'demo/demoAction',
    *  params1: '',
    *  params2: {}
@@ -42,11 +42,11 @@ class Share {
     console.warn('share options', options)
     const { action, path, share, ...rest } = { ...options }
     if (path) {
-      getApp().$api.reLaunch(path, rest)
+      wx.ct.$api.reLaunch(path, rest)
     } else if (action) {
-      getApp().$store.dispatch(action, rest)
+      wx.ct.$store.dispatch(action, rest)
     } else {
-      getApp().$api.reLaunch('routerIndex', rest)
+      wx.ct.$api.reLaunch('routeindex', rest)
     }
   }
   

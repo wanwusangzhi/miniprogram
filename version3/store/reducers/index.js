@@ -1,5 +1,6 @@
-import demo from './demo.js'
-
+import demo from 'demo'
+import article from 'article'
 export default {
-  demo
+  demo,
+  article
 }

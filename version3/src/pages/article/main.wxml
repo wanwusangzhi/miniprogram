@@ -1,0 +1,66 @@
+<!--src/pages/article/main.wxml-->
+<view class="container">
+  <view class="header">
+    <image src="/assets/setting.png"></image>
+    <view class="header_info">
+      <view>Namc=e</view>
+      <view>{{ t.like }}: 20</view>
+    </view>
+  </view>
+
+  <view class="content">
+    jsdksldfks html ss sdksd \n sdflsd
+    sdfskd" sd s \nsdfs'
+    sdfklsd
+    sdf          
+    jsdksldfks html ss sdksd \n sdflsd
+    sdfskd" sd s \nsdfs'
+    sdfklsd
+    sdf
+    jsdksldfks html ss sdksd \n sdflsd
+    sdfskd" sd s \nsdfs'
+    sdfklsd
+    sdf          
+    jsdksldfks html ss sdksd \n sdflsd
+    sdfskd" sd s \nsdfs'
+    sdfklsd
+    sdf
+    jsdksldfks html ss sdksd \n sdflsd
+    sdfskd" sd s \nsdfs'
+    sdfklsd
+    sdf          
+    jsdksldfks html ss sdksd \n sdflsd
+    sdfskd" sd s \nsdfs'
+    sdfklsd
+    sdf
+    jsdksldfks html ss sdksd \n sdflsd
+    sdfskd" sd s \nsdfs'
+    sdfklsd
+    sdf          
+    jsdksldfks html ss sdksd \n sdflsd
+    sdfskd" sd s \nsdfs'
+    sdfklsd
+    sdf
+    jsdksldfks html ss sdksd \n sdflsd
+    sdfskd" sd s \nsdfs'
+    sdfklsd
+    sdf          
+    jsdksldfks html ss sdksd \n sdflsd
+    sdfskd" sd s \nsdfs'
+    sdfklsd
+    sdf
+    jsdksldfks html ss sdksd \n sdflsd
+    sdfskd" sd s \nsdfs'
+    sdfklsd
+    sdf          
+    jsdksldfks html ss sdksd \n sdflsd
+    sdfskd" sd s \nsdfs'
+    sdfklsd
+    sdf
+  </view>
+  <!-- 广告 -->
+  <adComp list-data="{{ imgUrls }}" comp-style="height: 200rpx;"></adComp>
+
+  <!-- 评论 -->
+  <commentComp bind:callback="commentCallback"></commentComp>
+</view>

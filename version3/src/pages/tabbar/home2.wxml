@@ -1,0 +1,6 @@
+<!--src/pages/tabbar/home2.wxml-->
+<view class="container">
+  <view class="comp_box"><columnComp list-data="{{ columnList }}"></columnComp></view>
+
+  <contentComp list-data="{{ columnList }}"></contentComp>
+</view>

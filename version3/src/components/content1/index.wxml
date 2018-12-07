@@ -1,0 +1,36 @@
+<!--src/components/content_1/index.wxml-->
+<view class="content1_box app_box" wx:for="{{ listData }}" wx:key="{{ index }}" id="{{index}}" >
+  <!-- 标题 -->
+  <view class="title">
+    <view class="title_header">
+      <image src="https://avatars.mds.yandex.net/get-pdb/477388/fde0c602-7c8c-4374-945e-bd04dc6a41d1/orig" class="title_header_img">
+      </image>
+    </view>
+
+    <view>
+      <view>122as5as1a35s1as</view>
+      <view>阅读量 28</view>
+    </view>
+  </view>
+
+  <!-- 内容 -->
+  <view class="main_wrapper">
+    <image src="http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg"></image>
+  </view>
+
+  <!-- 评论区 -->
+  <view class="footer_wrapper">
+    <label>
+      <image class="footer_wrapper_icon" src="/assets/comment.png"></image>
+      <text>200</text>
+    </label>
+    <label>
+      <image class="footer_wrapper_icon" src="/assets/like.png"></image>
+      <text>200</text>
+    </label>
+    <label>
+      <image class="footer_wrapper_icon" src="/assets/share.png"></image>
+      <text>200</text>
+    </label>
+  </view>
+</view>

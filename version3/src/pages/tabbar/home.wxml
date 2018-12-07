@@ -1,0 +1,11 @@
+<!--src/pages/tabbar/home.wxml-->
+<view class="container">
+  <view class="lang .color_2" bindtap='changeLanguage'>{{ t.lang }}</view>
+  <!-- 广告 -->
+  <adComp list-data="{{ imgUrls }}" small='true'></adComp>
+
+  <!-- 模块 -->
+  <view class="comp_box"><columnComp list-data="{{ columnList }}"></columnComp></view>
+
+  <view class="comp_box"><content1Comp list-data="{{ [1,2] }}"></content1Comp></view>
+</view>

@@ -1,18 +1,39 @@
+// remember every instance
+const pageInstances = {}
 /**
  * basic page
  */
 const createBasePage = function() {
   return {
     onLoad(options = {}) {
-      // console.warn('basePage', options, getCurrentPages())
-      this.$store = getApp().$store
-      this.$api = wx.ct && wx.ct.$api
+      this._id = this.route
+      pageInstances[this._id] = this
+
+      this.$store = wx.ct.$store
+      this.$api = wx.ct.$api
+      this.$t = wx.ct.$t
       this._setData = this.setData
       this.setData = (obj) => {
         this._setData(obj)
-        this.caclComputed(this)
+        this.caclComputed()
       }
       this.caclComputed()
+    },
+    onUnload() {
+      // delete instance
+      delete pageInstances[this._id]
+    },
+    $changeLanguage(lang) {
+      if (!lang) {
+        lang = this.$api.getStorageSync('lang') === 'zh' ? 'en' : 'zh'
+      }
+      this._setCurLang(lang)
+    },
+    _setCurLang(lang) {
+      this.$api.setStorageSync('lang', lang)
+      Object.keys(pageInstances).forEach(item => {
+        pageInstances[item].caclComputed.call(pageInstances[item])
+      })
     },
     /**
      * computed
@@ -29,6 +50,9 @@ const createBasePage = function() {
   }
 }
 
+/**
+ * export create page
+ */
 const initPage = (page) => {
   const basePage = createBasePage()
   const baseKeys = Object.keys(basePage)

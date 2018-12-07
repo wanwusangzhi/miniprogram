@@ -1,5 +1,5 @@
 /**
-getApp().$store.commit('demo/demoAction', {
+wx.ct.$store.commit('demo/demoAction', {
   id: 123
 })
  */

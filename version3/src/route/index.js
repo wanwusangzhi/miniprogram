@@ -1,4 +1,4 @@
-const { $page, $share, $api } = wx.ct
+const { $page, $share, $api, $routerMap } = wx.ct
 
 const page = {
   /**
@@ -16,6 +16,8 @@ const page = {
     // 分享进入
     if (this.options.share) {
       $share.dealShare(this.options)
+    } else {
+      $api.reLaunch($routerMap.home3)
     }
   },
   add() {

@@ -9,13 +9,13 @@
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
-		"nodeModules": true
+		"nodeModules": true,
+		"uglifyFileName": false
 	},
-  "cloudfunctionRoot": true,
 	"compileType": "miniprogram",
-	"libVersion": "2.4.0",
-	"appid": "wx9d5f9dd5f7f7f259",
-	"projectname": "testMP",
+	"libVersion": "2.4.1",
+	"appid": "wx3c58bd6d38426eec",
+	"projectname": "version3",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
@@ -38,7 +38,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 1,
+			"current": 2,
 			"list": [
 				{
 					"id": -1,
@@ -51,6 +51,12 @@
 					"name": "share",
 					"pathName": "src/route/index",
 					"query": "share=true&action=demo/demoAction&params=123"
+				},
+				{
+					"id": 2,
+					"name": "article",
+					"pathName": "src/route/index",
+					"query": "share=true&path=articlemain&article_id=123"
 				}
 			]
 		}

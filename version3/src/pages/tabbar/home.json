@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "adComp": "/src/components/ad/index",
+    "columnComp": "/src/components/column/index",
+    "content1Comp": "/src/components/content1/index"
+  }
+}

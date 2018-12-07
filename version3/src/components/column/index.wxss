@@ -1,0 +1,32 @@
+/* src/components/column/index.wxss */
+@import '/app.wxss';
+
+.box {
+  border-bottom: 1rpx solid #f1f1f1;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  font-size: 30rpx;
+}
+
+.box_items {
+  width: 25%;
+  height: 180rpx;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.box_items > image {
+  padding: 10rpx;
+  width: 120rpx;
+  height: 120rpx;
+  margin: auto;
+}
+.box_items>.text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space:nowrap;
+  font-weight: 400;
+  padding-bottom: 10rpx;
+}

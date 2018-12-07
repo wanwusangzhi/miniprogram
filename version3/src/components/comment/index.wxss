@@ -1,0 +1,88 @@
+/* src/components/comment/index.wxss */
+
+/* 底部 */
+
+.comment_box {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 120rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: white;
+  box-shadow: inset 0 1rpx 0rpx 0rpx #f1f1f1;
+  text-align: center;
+}
+
+.comment_box>view {
+  flex: 1;
+}
+
+.comment_box>view:hover {
+  filter: brightness(1.2);
+}
+
+.comment_box_img {
+  width: 48rpx;
+  height: 48rpx;
+  margin-right: 10rpx;
+  vertical-align: text-bottom;
+}
+
+/* comment */
+
+.comment_area {
+  height: 40rpx;
+  line-height: 40rpx;
+  margin: 20rpx 0;
+  font-size: 32rpx;
+}
+
+.comment_list {
+  width: 100%;
+  padding: 20rpx 0;
+  height: auto;
+  display: flex;
+}
+
+/* left side */
+
+.comment_list_header {
+  width: 90rpx;
+}
+
+.comment_list_header > image {
+  margin-top: 16rpx;
+  width: 72rpx;
+  height: 72rpx;
+}
+
+/* right side */
+
+.comment_list_main {
+  flex: 1;
+}
+
+.main_name {
+  color: #cbcbcb;
+}
+
+.main_time {
+  font-size: 32rpx;
+  color: #dbdbdb;
+}
+
+.main_text {
+  font-size: 34rpx;
+}
+
+/* 占位区 */
+
+.relative_box {
+  position: relative;
+  height: 120rpx;
+  width: 100%;
+  border: 1px solid red;
+}

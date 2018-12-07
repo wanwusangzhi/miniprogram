@@ -1,0 +1,21 @@
+<!--src/components/ad/index.wxml-->
+<view class="boardcast" style="{{ compStyle || '' }}">
+  <swiper
+    class="'boardcast_swiper' {{ small ? 'small' : ''}}"
+    indicator-dots="{{ listData.length > 1 }}"
+    indicator-color="white"
+    indicator-active-color="#d81e06"
+    circular="true"
+    autoplay="true"
+    display-multiple-items="1"
+    previous-margin="0rpx"
+    next-margin="0rpx"
+    interval="3000"
+    duration="1500">
+    <block wx:for="{{ listData }}" wx:key="{{index}}">
+      <swiper-item>
+        <image src="{{item}}" class="boardcast_swiper_image" />
+      </swiper-item>
+    </block>
+  </swiper>
+</view>

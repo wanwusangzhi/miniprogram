@@ -1,0 +1,14 @@
+{
+  "usingComponents": {
+    "columnComp": "/src/components/column/index",
+    "itemComp": "/src/components/item/index"
+  },
+  "navigationBarBackgroundColor": "#d81e06",
+  "window": {
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#d81e06",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": false
+  }
+}
