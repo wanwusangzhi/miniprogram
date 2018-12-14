@@ -333,6 +333,7 @@ wx.ct.$request({
 })
 ```
 
+能扩展还是因为以下操作。  
 ```
 static getConfig() {
   return {
