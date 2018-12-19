@@ -22,6 +22,12 @@
   position:absolute;
   bottom: 0;
 }
+.left_view {
+  width: 32rpx;
+  height:32rpx;
+  vertical-align: middle;
+  margin-right: 10rpx;
+}
 
 /* right side */
 .content_box_right {

@@ -5,7 +5,7 @@
   height: 90rpx;
   display: flex;
   align-items: center;
-  padding: 0 20rpx;
+  padding: 0 30rpx;
   border-bottom: 1rpx solid #fafafa;
   position: relative;
   font-size: 30rpx;
@@ -24,7 +24,7 @@
   border-color: #d81e06;
   top: 0;
   bottom: 0;
-  right: 20rpx;
+  right: 30rpx;
   margin: auto;
   transform: rotateZ(-45deg);
 }
@@ -32,4 +32,17 @@
 .item_box_item:hover {
   filter: opacity(0.85);
   box-shadow: inset 0 0 0 1rpx #fafafa;
+}
+button {
+  width:100%;
+  text-align: left;
+  font-size: 30rpx;
+  background: transparent;
+  padding:0;
+}
+button::after {
+  border: none;
+}
+button:hover, button:active{
+  background: none; 
 }

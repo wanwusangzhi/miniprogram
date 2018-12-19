@@ -7,20 +7,22 @@
   justify-content: flex-start;
   flex-wrap: wrap;
   box-sizing: border-box;
-  font-size: 30rpx;
+  font-size: 26rpx;
+  padding: 5rpx;
+  font-weight: 400;
 }
 
 .box_items {
-  width: 25%;
-  height: 180rpx;
+  width: 20%;
+  height: 120rpx;
   display: flex;
   flex-direction: column;
   text-align: center;
 }
 .box_items > image {
-  padding: 10rpx;
-  width: 120rpx;
-  height: 120rpx;
+  /* padding: 10rpx; */
+  width: 60rpx;
+  height: 60rpx;
   margin: auto;
 }
 .box_items>.text {

@@ -1,6 +1,6 @@
 <!--src/components/column/index.wxml-->
-<view class="box app_box">
-  <view wx:for="{{ listData }}" wx:key="{{ index }}" id="{{index}}" class="box_items">
+<view class="box ">
+  <view wx:for="{{ listData }}" wx:key="{{ index }}" id="{{index}}" class="box_items app_box_item">
     <image mode="scaleToFill" src="{{ item.src || '/assets/default_column.png' }}"></image>
     <view class="text">{{ item.name }}</view>
   </view>

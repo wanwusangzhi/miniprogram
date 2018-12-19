@@ -26,7 +26,6 @@ Component({
    */
   methods: {
     itemTap(e) {
-      console.log(e)
       const id = e.currentTarget.id
       const url = this.data.listData[id].url
       if (url) {

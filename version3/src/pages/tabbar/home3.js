@@ -19,7 +19,13 @@ const page = {
       }
     },
     itemList() {
-      return [this.$t('home3.my.project'), this.$t('home3.my.score')]
+      return [{
+        name: this.$t('home3.columnList.privacy'),
+        openType: ''
+      }, {
+        name: this.$t('home3.columnList.setting'),
+        openType: 'openSetting'
+      }]
     },
     columnList() {
       return [{
@@ -28,19 +34,22 @@ const page = {
       }, {
         name: this.$t('home3.my.project'),
         src: ''
-      }, {
-        name: '游戏ssa枯枯顶替',
-        src: ''
-      }, {
-        name: 'sdfisdk木大日',
-        src: ''
-      }, {
-        name: '',
-        src: '/assets/default_column.png'
       }]
     }
   },
-  clickChange() {
+  settingListClick(e) {
+    const id = +e.detail.index
+    switch (id) {
+      case 0:
+        $api.navigateTo('setting');
+        break;
+      case 1:
+        $api.navigateTo('articlemain');
+        break;
+    }
+  },
+  onShareAppMessage () {
+    return wx.ct.$share.createShare({id: 123})
   }
 }
 $page(page)

@@ -11,15 +11,17 @@ export default {
     core: '积分',
     name: '昵称',
     dayClick: '签到',
-    my: {
-      project: '课程',
-      score: '学分'
+    columnList: {
+      setting: '权限设置',
+      privacy: '规则'
     }
   },
   home1: {
     columnList: {
       writing: '文章',
-      shoping: '购物'
+      shoping: '购物',
+      leisure: '休闲',
+      arts: '艺术'
     }
   },
   article: {

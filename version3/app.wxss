@@ -1,16 +1,21 @@
 /**app.wxss**/
-
-view, text, swiper, scroll-view, image {
+page{
+  min-height: 100%;
+}
+view, text, swiper, scroll-view, image,textarea,span {
   box-sizing: border-box;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .container {
-  height: 100%;
+  /* height: 100%; */
   width: 100%;
   position: relative;
   box-sizing: border-box;
-  
+  overflow: auto;
+  min-height: 100%;
 }
+
 .comp_box {
   /* border: 1rpx solid #d81e06; */
   border: 1rpx solid #f1f1f1;
@@ -20,6 +25,7 @@ view, text, swiper, scroll-view, image {
   overflow: hidden;
   box-shadow: 0 0 30rpx 10rpx #f1f1f1;
 }
+
 /* float */
 
 .float_left {
@@ -39,7 +45,9 @@ view, text, swiper, scroll-view, image {
 .color_2 {
   color: #dbdbdb;
 }
+
 /* 两行省略 */
+
 .app_two_line {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -49,12 +57,15 @@ view, text, swiper, scroll-view, image {
 }
 
 /* app box */
-.app_box{
+
+.app_box, .app_box_item {
   position: relative;
 }
+
 /* .app_box:not(:last-child) {
   margin-bottom: 20rpx;
 } */
+
 .app_box:not(:last-child)::after {
   position: absolute;
   display: block;
@@ -66,8 +77,43 @@ view, text, swiper, scroll-view, image {
   width: 100%;
   border-top: 1rpx solid #f1f1f1;
   background: linear-gradient(185deg, #f1f1f1, #fcfcfc);
-  /* background: #f1f1f1; */
 }
-.app_box:hover{
-  filter: opacity(.8);
+
+.app_box:active, .app_box_item:active {
+  filter: opacity(0.8);
+  background: #f1f1f1;
+}
+
+/* modal-dialog */
+
+.app_dialog {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+}
+
+.app_dialog_modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.35;
+  overflow: auto;
+}
+
+.app_dialog_box {
+  position: fixed;
+  top: 300rpx;
+  left: 0;right: 0;
+  margin: auto;
+  width: 80%;
+  height: 400rpx;
+  background: #fff;
+  border-radius: 10rpx;
+  box-shadow: 0 2rpx 18rpx 4rpx #f1f1f1;
 }

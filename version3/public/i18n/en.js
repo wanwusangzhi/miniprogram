@@ -11,15 +11,17 @@ export default {
     core: 'Core',
     name: 'Name',
     dayClick:'Record',
-    my: {
-      project: 'Project',
-      score: 'Score'
+    columnList: {
+      setting: 'Privacy Setting',
+      privacy: 'Privacy Rules'
     }
   },
   home1: {
     columnList: {
       writing: 'Article',
-      shoping: 'Shoping'
+      shopping: 'Shopping',
+      leisure: 'Leisure',
+      arts: 'Arts'
     }
   },
   article: {

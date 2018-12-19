@@ -1,5 +1,7 @@
 // src/components/comment/index.js
-const { $t } = wx.ct
+const {
+  $t
+} = wx.ct
 Component({
   options: {
     addGlobalClass: true,
@@ -19,7 +21,9 @@ Component({
       article: {
         commentArea: $t('article.commentArea')
       }
-    }
+    },
+    textarea_showConfirmBar: false,
+    textarea_fixed: true
   },
 
   /**
@@ -27,11 +31,31 @@ Component({
    */
   methods: {
     click(e) {
-      if (!e.target.id) return
-      const id = e.target.id
-      this.triggerEvent('callback', {
-        index: id
+      let id = e.target.id
+      if (id === undefined || id === '') return
+      id -= 0
+      switch (id) {
+        case 0:
+          this.changeModalStatus(1)
+          break;
+        case 1:
+        case 2:
+          {
+            this.triggerEvent('callback', {
+              index: id
+            })
+          }
+          break;
+      }
+    },
+    closeModal(e) {
+      this.changeModalStatus(0)
+    },
+    changeModalStatus(flag) {
+      this.setData({
+        modalStatus: flag
       })
-    }
+    },
+    touchmove(){}
   }
 })

@@ -1,26 +1,36 @@
 <!--src/components/comment/index.wxml-->
 <!-- 评论区 -->
-<view class="comment_area">{{ t.article.commentArea }}</view>
-
-<view class="comment_list app_box" wx:for="{{ [1,2] }}" wx:key="{{index}}">
-  <view class="comment_list_header">
-    <image src="/assets/tab_3_active.png"></image>
-  </view>
-  <view class="comment_list_main">
-    <view class="main_name">userId</view>
-    <view class="main_time">time</view>
-    <view class="main_text">comment si s htis form sdi vi这是城是评论区，主要评论还是很好的</view>
+<view class="comment_comp">
+  <view class="comment_area">{{ t.article.commentArea }}</view>
+  <view class="comment_list app_box" wx:for="{{ [1,2] }}" wx:key="{{index}}">
+    <view class="comment_list_header">
+      <image src="/assets/tab_3_active.png"></image>
+    </view>
+    <view class="comment_list_main">
+      <view class="main_name">userId</view>
+      <view class="main_time">time</view>
+      <view class="main_text">comment si s htis form sdi vi这是城是评论区，主要评论还是很好的</view>
+    </view>
   </view>
 </view>
-<!-- 占位 -->
-<view class="relative_box"></view>
 
 <!-- 操作区 -->
 <view class="comment_box" catchtap='click'>
   <view id="0">
     <image class="comment_box_img" src="/assets/comment.png"></image>100</view>
   <view id="1">
-    <image class="comment_box_img" src="/assets/like.png"></image>100</view>
+    <image class="comment_box_img" src="/assets/like.png" wx:if="{{like}}"></image>
+    <image class="comment_box_img" src="/assets/likefill.png" wx:else></image>
+    100
+  </view>
   <view id="2">
     <image class="comment_box_img" src="/assets/share.png"></image>100</view>
+</view>
+
+<view class="app_dialog" capture-catch:touchmove="touchmove" wx:if="{{modalStatus}}">
+  <view class="app_dialog_modal" bindtap='closeModal'></view>
+  <view class="app_dialog_box">
+    <view class="dialog_box_title">Title</view>
+    <textarea value="" placeholder="input comment" maxlength="1000" auto-focus="true" show-confirm-bar="{{textarea_showConfirmBar}}" cursor-spacing="120rpx" fixed="{{textarea_fixed}}"></textarea>
+  </view>
 </view>

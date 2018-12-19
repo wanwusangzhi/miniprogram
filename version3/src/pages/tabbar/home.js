@@ -25,23 +25,19 @@ const page = {
     columnList() {
       return [{
         name: this.$t('home1.columnList.writing'),
-        src: '/assets/article.png',
+        src: '/assets/item_article.png',
         url: $routerMap.articlemain
       }, {
-        name: this.$t('home1.columnList.shoping'),
-        src: '',
+        name: this.$t('home1.columnList.shopping'),
+        src: '/assets/item_gouwu.png',
         url: $routerMap.articlemain
       }, {
-        name: '游戏ssa枯枯顶替',
-        src: '',
+        name: this.$t('home1.columnList.leisure'),
+        src: '/assets/item_youxian.png',
         url: $routerMap.articlemain
       }, {
-        name: '游戏ssa枯枯顶替',
-        src: '',
-        url: $routerMap.articlemain
-      }, {
-        name: '游戏ssa枯枯顶替',
-        src: '',
+        name: this.$t('home1.columnList.arts'),
+        src: '/assets/item_tupian.png',
         url: $routerMap.articlemain
       }]
     }

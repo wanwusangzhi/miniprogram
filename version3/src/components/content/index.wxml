@@ -2,7 +2,9 @@
 <view class="content_box app_box" wx:for="{{ listData }}" wx:key="{{ index }}" id="{{index}}" bindtap='itemTap'>
   <view class="content_box_left" >
     <view class="app_two_line">this is title, 这是主题，this is title, 这是主题，this is title, 这是主题</view>
-    <view class="left_name_date color_2">Jack 2018-10-11</view>
+    <view class="left_name_date color_2">
+      <image  class="left_view" src="/assets/kanguo.png"></image>20 Jack 2018-10-11
+    </view>
   </view>
 
   <view class="content_box_right">

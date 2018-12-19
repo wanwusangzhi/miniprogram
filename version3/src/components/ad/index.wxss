@@ -16,7 +16,6 @@
   height: 100%;
 }
 
-
 .small swiper-item{
   text-align: center;
 }
@@ -25,4 +24,7 @@
   border-radius: 40rpx;
   width: 90%!important;
   margin: 0 auto;
+}
+.small swiper-item > image:active{
+  box-shadow: 0 0 4rpx 8rpx #f1f1f1;
 }

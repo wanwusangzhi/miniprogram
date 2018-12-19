@@ -1,6 +1,14 @@
 <!--src/components/item/index.wxml-->
 <view class="item_box">
-  <view wx:for="{{ listData }}" wx:key="{{ index }}" id="{{index}}" class="item_box_item">
-    {{item}}
-  </view>
+  <block wx:for="{{ listData }}" wx:key="{{ index }}">
+    <view wx:if="{{!item.openType}}" id="{{index}}" class="item_box_item app_box_item" bindtap='click'>
+      {{item.name}}
+    </view>
+
+    <view wx:else id="{{index}}" class="item_box_item app_box_item" >
+      <button open-type="{{item.openType}}">
+        {{item.name}}
+      </button>
+    </view>
+  </block>
 </view>
