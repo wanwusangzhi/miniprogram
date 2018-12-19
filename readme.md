@@ -401,6 +401,23 @@ params:  参数如果是跳转页面，会在page.$options中，跳转方法会�
 
 ---  
 
+** store--index.js **   
+store应用基本用vuex相似，只是在封装层次上没有过多的校验。  
+1 对actions/state/reducers进行统一管理与初始化。  
+2 暴露dispath/commit方法提供调用。  
+3 store.state值存放在内存中，引用类型。  
+
+```
+调用actions：  
+wx.ct.$store.dispatch('actionsnamespace/method', params)  
+or  
+wx.ct.$store.dispatch('actionsnamespace.method', params)  
+
+调用reducers:   
+wx.ct.$store.commit('reducers_namespace/method', params)  
+or  
+wx.ct.$store.commit('reducers_namespace.method', params)  
+```
 
 ### color
 ```
