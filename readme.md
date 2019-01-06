@@ -27,8 +27,8 @@
    }
    ```
    1.4 点击示例导航将看到刚添加的页面  
-   ![demo.js](https://github.com/wanwusangzhi/miniprogram/tree/master/version3/readmeFile/1.1.png)
-   ![demo.js](https://github.com/wanwusangzhi/miniprogram/tree/master/version3/readmeFile/1.2)
+   ![demo.js](https://github.com/wanwusangzhi/miniprogram/blob/master/version3/readmeFile/1.1.png)
+   ![demo.js](https://raw.githubusercontent.com/wanwusangzhi/miniprogram/master/version3/readmeFile/1.2.png)
 
 2. 在store/reducers/demo.js中增加state和reducers  
 
@@ -105,7 +105,7 @@
     },
   })
   ```
-![页面图](https://github.com/wanwusangzhi/miniprogram/tree/master/version3/readmeFile/4.1)   
+![页面图](https://raw.githubusercontent.com/wanwusangzhi/miniprogram/master/version3/readmeFile/4.1.png)   
 5. 增加交互效果  
    5.1 增通过发起dispatch修改数据  
   ```  
@@ -148,7 +148,7 @@
   ```  
 6. 跳转页面  
    6.1 在/public/router/index.js中添加路径配置  
-   ![](https://github.com/wanwusangzhi/miniprogram/tree/master/version3/readmeFile/6.1) 
+   ![](https://raw.githubusercontent.com/wanwusangzhi/miniprogram/master/version3/readmeFile/6.1.png) 
    6.2 引入$api/$routerMap，实现页面跳转
   ```
   const {
