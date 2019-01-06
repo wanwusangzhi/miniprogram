@@ -27,7 +27,7 @@
    }
    ```
    1.4 点击示例导航将看到刚添加的页面  
-   ![demo.js](https://github.com/wanwusangzhi/miniprogram/blob/master/version3/readmeFile/1.1.png)
+   ![demo.js](https://github.com/wanwusangzhi/miniprogram/master/version3/readmeFile/1.1.png)
    ![demo.js](https://raw.githubusercontent.com/wanwusangzhi/miniprogram/master/version3/readmeFile/1.2.png)
 
 2. 在store/reducers/demo.js中增加state和reducers  
