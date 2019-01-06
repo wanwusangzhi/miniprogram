@@ -16,6 +16,10 @@ const routes = {
     url: '/src/pages/tabbar/home3',
     isNeedLogin: false
   },
+  demo: {
+    url: '/src/pages/tabbar/demo',
+    isNeedLogin: false
+  },
   // article
   articlemain: {
     url: '/src/pages/article/main',

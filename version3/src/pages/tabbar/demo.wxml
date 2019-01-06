@@ -1,0 +1,11 @@
+<!--src/pages/tabbar/demo.wxml-->
+<view>
+  <view>当前计数器: {{ count }}</view>
+  <view>计数器增加computed的效果: {{ watchCount }}</view>
+  <view>
+    <button bindtap="increment">点击增加+</button>
+    <button bindtap="decrement">点击减少-</button>
+    <button bindtap="asyncIncrement">异步增加+</button>
+  </view>
+  <view><button bindtap="goToNext">跳转下个页面</button></view>
+</view>

@@ -3,7 +3,8 @@
     "src/route/index",
     "src/pages/tabbar/home",
     "src/pages/tabbar/home2",
-    "src/pages/tabbar/home3"
+    "src/pages/tabbar/home3",
+    "src/pages/tabbar/demo"
   ],
   "window": {
     "navigationBarBackgroundColor": "white",
@@ -26,7 +27,7 @@
     },
     {
       "root": "src/pages/article",
-      "pages":[
+      "pages": [
         "main"
       ]
     }
@@ -35,7 +36,7 @@
     "color": "#dbdbdb",
     "selectedColor": "#d81e06",
     "borderStyle": "white",
-    "backgroundColor":"#fafafa",
+    "backgroundColor": "#fafafa",
     "position": "bottom",
     "list": [
       {
@@ -53,6 +54,12 @@
       {
         "pagePath": "src/pages/tabbar/home3",
         "text": "个人",
+        "iconPath": "/assets/tab_3.png",
+        "selectedIconPath": "/assets/tab_3_active.png"
+      },
+      {
+        "pagePath": "src/pages/tabbar/demo",
+        "text": "示例",
         "iconPath": "/assets/tab_3.png",
         "selectedIconPath": "/assets/tab_3_active.png"
       }

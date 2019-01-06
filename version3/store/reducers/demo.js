@@ -4,15 +4,20 @@ wx.ct.$store.commit('demo/demoAction', {
 })
  */
 const state = {
-  userInfo: null
+  userInfo: null,
+  count: 0
 }
 
 const reducers = {
-  demoCommit(state, payload) {
+  mergeCount ({state}, payload) {
+    state.count = payload
+    return state
+  },
+  demoCommit({state}, payload) {
     state.userInfo = payload
     return state
   },
-  demoCommitName(state, payload) {
+  demoCommitName({state}, payload) {
     state.userInfo.name = payload
     return state
   }

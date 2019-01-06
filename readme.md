@@ -2,6 +2,171 @@
 
 # Version3  
 
+## Demo示例  
+1. 创建page页面, 
+   1.1 目录/src/pages/tabbar/下右键创建page, 分别demo.js,demo.wxss,demo.xml,demo.json  
+   1.2 demo.js引入wx.ct.$page变量  
+   ```
+    const {
+      $page
+    } = wx.ct
+
+    $page({
+      data:{},
+    })
+   ```
+   1.3 app.json中添加页面至导航栏中  
+   ```
+   tabBar: {
+     list: [{
+        "pagePath": "src/pages/tabbar/demo",
+        "text": "示例",
+        "iconPath": "/assets/tab_3.png",
+        "selectedIconPath": "/assets/tab_3_active.png"
+      }]
+   }
+   ```
+   1.4 点击示例导航将看到刚添加的页面  
+   ![demo.js](https://github.com/wanwusangzhi/miniprogram/tree/master/version3/readmeFile/1.1.png)
+   ![demo.js](https://github.com/wanwusangzhi/miniprogram/tree/master/version3/readmeFile/1.2)
+
+2. 在store/reducers/demo.js中增加state和reducers  
+
+  ```
+  // wx.ct.$store.commit('demo/demoAction', { id: 123 })
+  const state = {
+    userInfo: null,
+    count: 0
+  }
+
+  const reducers = {
+    mergeCount ({state}, payload) {
+      state.count = payload
+    }
+  }
+
+  export default {
+    state,
+    reducers
+  }
+  ```  
+
+3. 在store/actions/demo.js中增加actions  
+
+  ```
+  // wx.ct.$store.dispatch('demo/demoAction', { id: 123 })  
+  const actions = {
+    mergeCountAction({ commit }, payload) {
+      return commit('demo/mergeCount', payload)
+    },
+    mergeCountActionAsync ({commit}, payload) {
+      return new Promise((resolve, reject) => {
+        const res = commit('demo/mergeCount', payload);
+        resolve(res)
+      });
+    },
+  }
+  export default {
+    actions
+  }
+  ```  
+
+4. 修改demo.wxml/demo.js
+  ```  
+  demo.wxml  
+  <!--src/pages/tabbar/demo.wxml-->
+  <view>
+    <view>当前计数器: {{ count }}</view>
+    <view>计数器增加computed的效果: {{ watchCount }}</view>
+    <view>
+      <button bindtap="increment">点击增加+</button>
+      <button bindtap="decrement">点击减少-</button>
+      <button bindtap="asyncIncrement">异步增加+</button>
+    </view>
+    <view><button bindtap="goToNext">跳转下个页面</button></view>
+  </view>
+  ```
+
+  ```  
+  demo.js  
+  const {
+    $page,
+    $store,
+  } = wx.ct
+
+  $page({
+    data: {
+      count: $store.state.demo.count
+    },
+    computed: {
+      watchCount () {
+        return $store.state.demo.count * Math.random()
+      }
+    },
+  })
+  ```
+![页面图](https://github.com/wanwusangzhi/miniprogram/tree/master/version3/readmeFile/4.1)   
+5. 增加交互效果  
+   5.1 增通过发起dispatch修改数据  
+  ```  
+  demo.js   
+  const {
+    $page,
+    $store,
+  } = wx.ct
+
+  $page({
+    data: {
+      count: $store.state.demo.count
+    },
+    computed: {
+      watchCount () {
+        return $store.state.demo.count * Math.random()
+      }
+    },
+    increment() {
+      const res = $store.dispatch('demo/mergeCountAction', ++this.data.count)
+      this.setData({
+        count: res.count
+      })
+    },
+    decrement() {
+      const res = $store.dispatch('demo/mergeCountAction', ++this.data.count)
+      this.setData({
+        count: res.count
+      })
+    },
+    asyncIncrement() {
+      $store.dispatch('demo/mergeCountActionAsync', ++this.data.count)
+        .then(res => {
+          this.setData({
+            count: res.count
+          })
+        })
+    }
+  })
+  ```  
+6. 跳转页面  
+   6.1 在/public/router/index.js中添加路径配置  
+   ![](https://github.com/wanwusangzhi/miniprogram/tree/master/version3/readmeFile/6.1) 
+   6.2 引入$api/$routerMap，实现页面跳转
+  ```
+  const {
+    $page,
+    $store,
+    $api,
+    $routerMap
+  } = wx.ct
+
+  $page({
+    goToNext () {
+      $api.navigateTo($routerMap.articlemain)
+    }
+  })
+  ```
+
+
+## 结构分析
 
 ### 结构
 ```

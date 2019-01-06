@@ -44,7 +44,7 @@ class Store {
           this.dispatch(methodName, payload)
         },
         commit: (commitName, commitPayload) => {
-          this.commit(commitName, commitPayload)
+          return this.commit(commitName, commitPayload)
         }
       }, payload)
     } catch (e) {
@@ -58,14 +58,14 @@ class Store {
     let method = null
     try {
       method = _getFunction(this.reducers, methodName)
-      method({ 
+      return method({ 
         state: this.state[methodName.split(/\/|\./g).shift()],
         globalState: this.state,
         dispatch: (methodName, payload) => {
           this.dispatch(methodName, payload)
         },
         commit: (commitName, commitPayload) => {
-          this.commit(commitName, commitPayload)
+          return this.commit(commitName, commitPayload)
         }
       }, payload)
     } catch(e) {

@@ -10,6 +10,15 @@ wx.ct.$store.dispatch('demo/demoAction', {
 })
  */
 const actions = {
+  mergeCountAction({ commit }, payload) {
+    return commit('demo/mergeCount', payload)
+  },
+  mergeCountActionAsync ({commit}, payload) {
+    return new Promise((resolve, reject) => {
+      const res = commit('demo/mergeCount', payload);
+      resolve(res)
+    });
+  },
   demoGetList ({commit}, payload) {
     return $request({
       url: URL.GET_LOCATION_LIST,
